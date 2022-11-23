@@ -18,4 +18,9 @@ class BarangKeluar extends Model
         'tgl_keluar'
     ];
 
+    
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'id_barang');
+    }
 }

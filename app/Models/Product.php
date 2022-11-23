@@ -16,9 +16,13 @@ class Product extends Model
     ];
 
     // RELASI PRODUK KE BARANG MASUK & KELUAR
-    public function nama()
-    {
-        return $this->hasMany(BarangMasuk::class);
-    }
+    // public function barangmasuk()
+    // {
+    //     return $this->hasMany(BarangMasuk::class, 'id_barang');
+    // }
+    // public function barangkeluar()
+    // {
+    //     return $this->hasMany(barangkeluar::class, 'id_barang');
+    // }
 
 }

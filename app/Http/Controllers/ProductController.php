@@ -20,7 +20,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
         return view('admin.products.index', [
             'title'     => 'Data Barang',
             'produk'    => Product::all()

@@ -18,5 +18,10 @@ class BarangMasuk extends Model
         'stok',
         'tgl_masuk'
     ];
+
     
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'id_barang');
+    }
 }

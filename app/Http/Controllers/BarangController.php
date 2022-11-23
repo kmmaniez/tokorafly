@@ -12,6 +12,9 @@ class BarangController extends Controller
 
     public function index() // VIEW TABLE BARANG MASUK
     {
+        // $brg = BarangMasuk::find(7);
+        // echo $brg->product->nama_produk;
+        // dd($brg);
         return view('admin.barang-masuk.index',[
             'title'         => 'Data Stok Barang Masuk',
             'barangmasuk'   => BarangMasuk::all()

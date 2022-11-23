@@ -24,9 +24,6 @@
                                 <th>Ukuran</th>
                                 <th>Stok</th>
                                 <th>Tanggal Keluar</th>
-                                {{-- @can('tambah laporan')
-                                <th>Aksi</th>
-                                @endcan --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -34,21 +31,11 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->nama_bgudang }}</td>
-                                <td>{{ $data->id_barang }}</td>
+                                <td>{{ $data->product->nama_produk }}</td>
                                 <td>{{ $data->warna }}</td>
                                 <td>{{ $data->ukuran }}</td>
                                 <td>{{ $data->stok }}</td>
                                 <td>{{ $data->tgl_keluar }}</td>
-                                {{-- @can('tambah laporan')
-                                <td>
-                                    <form action="" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <a class="btn btn-sm btn-primary" href="">Edit</a>
-                                        <button class="btn btn-sm btn-danger">Hapus</button>
-                                    </form>
-                                </td>
-                                @endcan --}}
                             </tr>
                             @empty
                             <tr class="text-center">
