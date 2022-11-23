@@ -32,7 +32,7 @@
                     <span>Data Products</span></a>
             </li>
             
-            @can('lihat barang')
+            @can('tambah barang')
             <li class="nav-item {{ (request()->is('barang-masuk*')) ? 'active' : '' }}">
                 <a class="nav-link" href="/barang-masuk">
                     <i class="fas fa-fw fa-sign-in-alt"></i>
