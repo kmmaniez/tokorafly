@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,9 +18,5 @@ class BarangMasuk extends Model
         'stok',
         'tgl_masuk'
     ];
-
-    public function res_brgmasuk()
-    {
-        return $this->belongsTo(BarangMasuk::class, 'id_barang');
-    }
+    
 }

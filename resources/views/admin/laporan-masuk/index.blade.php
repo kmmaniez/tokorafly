@@ -5,16 +5,12 @@
     <div class="container-fluid">
     
         <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">Halaman Laporan Barang Masuk</h1>
-        
-        @can('tambah laporan')
-        <a href="/laporan-masuk/create" class="btn btn-md btn-primary mb-4"><i class="fas fa-fw fa-user-plus"></i> Tambah Laporan Barang Masuk</a>
-        @endcan
+        <h1 class="h3 mb-4 text-gray-800">Halaman {{ $title }}</h1>
         
         <!-- DataTales -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Laporan Barang Masuk</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ $title }}</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -27,9 +23,10 @@
                                 <th>Warna</th>
                                 <th>Ukuran</th>
                                 <th>Stok</th>
-                                @can('tambah laporan')
+                                <th>Tanggal Masuk</th>
+                                {{-- @can('tambah laporan')
                                 <th>Aksi</th>
-                                @endcan
+                                @endcan --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +38,8 @@
                                 <td>{{ $data->warna }}</td>
                                 <td>{{ $data->ukuran }}</td>
                                 <td>{{ $data->stok }}</td>
-                                @can('tambah laporan')
+                                <td>{{ $data->tgl_masuk }}</td>
+                                {{-- @can('tambah laporan')
                                 <td>
                                     <form action="" method="post">
                                         @csrf
@@ -50,7 +48,7 @@
                                         <button class="btn btn-sm btn-danger">Hapus</button>
                                     </form>
                                 </td>
-                                @endcan
+                                @endcan --}}
                             </tr>
                             @empty
                             <tr class="text-center">

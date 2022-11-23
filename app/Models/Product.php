@@ -16,24 +16,9 @@ class Product extends Model
     ];
 
     // RELASI PRODUK KE BARANG MASUK & KELUAR
-    public function brgmasuk()
+    public function nama()
     {
         return $this->hasMany(BarangMasuk::class);
     }
-    
-    public function brgkeluar()
-    {
-        return $this->hasMany(BarangKeluar::class);
-    }
 
-    // RELASI PRODUK KE LAPORAN MASUK & KELUAR
-    public function lapmasuk()
-    {
-        return $this->hasMany(LaporanMasuk::class);
-    }
-    
-    public function lapkeluar()
-    {
-        return $this->hasMany(LaporanKeluar::class);
-    }
 }

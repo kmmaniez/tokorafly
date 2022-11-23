@@ -26,7 +26,7 @@
 
             <!-- Nav Item - Tables -->
 
-            <li class="nav-item {{ (request()->is('products')) ? 'active' : '' }}">
+            <li class="nav-item {{ (request()->is('products*')) ? 'active' : '' }}">
                 <a class="nav-link" href="/products">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Data Products</span></a>

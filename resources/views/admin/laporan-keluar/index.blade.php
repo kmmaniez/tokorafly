@@ -7,10 +7,6 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Halaman {{ $title }}</h1>
         
-        @can('tambah laporan')
-        <a href="/laporan-keluar/tambah-laporan" class="btn btn-md btn-primary mb-4"><i class="fas fa-fw fa-user-plus"></i> Tambah {{ $title }}</a>
-        @endcan
-        
         <!-- DataTales -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -27,9 +23,10 @@
                                 <th>Warna</th>
                                 <th>Ukuran</th>
                                 <th>Stok</th>
-                                @can('tambah laporan')
+                                <th>Tanggal Keluar</th>
+                                {{-- @can('tambah laporan')
                                 <th>Aksi</th>
-                                @endcan
+                                @endcan --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +38,8 @@
                                 <td>{{ $data->warna }}</td>
                                 <td>{{ $data->ukuran }}</td>
                                 <td>{{ $data->stok }}</td>
-                                @can('tambah laporan')
+                                <td>{{ $data->tgl_keluar }}</td>
+                                {{-- @can('tambah laporan')
                                 <td>
                                     <form action="" method="post">
                                         @csrf
@@ -50,7 +48,7 @@
                                         <button class="btn btn-sm btn-danger">Hapus</button>
                                     </form>
                                 </td>
-                                @endcan
+                                @endcan --}}
                             </tr>
                             @empty
                             <tr class="text-center">

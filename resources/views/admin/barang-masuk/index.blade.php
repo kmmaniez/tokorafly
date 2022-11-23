@@ -26,8 +26,8 @@
                                 <th>Nama Barang</th>
                                 <th>Warna</th>
                                 <th>Ukuran</th>
-                                <th>Jumlah Barang</th>
-                                <th>Tanggal Masuk</th>
+                                <th>Stok</th>
+                                <th>Tanggal Masuks</th>
                                 @can('tambah barang')
                                 <th>Aksi</th>
                                 @endcan
@@ -45,10 +45,10 @@
                                 <td>{{ $data->tgl_masuk }}</td>
                                 @can('tambah barang')
                                 <td>
-                                    <form action="" method="post">
+                                    <form action="/barang-masuk/{{ $data->id }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <a class="btn btn-sm btn-primary" href="{{ $data->id }}">Edit</a>
+                                        <a class="btn btn-sm btn-primary" href="{{ route('barang-masuk.edit', $data->id) }}">Edit</a>
                                         <button class="btn btn-sm btn-danger">Hapus</button>
                                     </form>
                                 </td>

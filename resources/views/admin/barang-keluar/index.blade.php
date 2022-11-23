@@ -26,9 +26,11 @@
                                 <th>Nama Barang</th>
                                 <th>Warna</th>
                                 <th>Ukuran</th>
-                                <th>Jumlah Barang</th>
+                                <th>Stok</th>
                                 <th>Tanggal Keluar</th>
+                                @can('edit barang')
                                 <th>Aksi</th>
+                                @endcan
                             </tr>
                         </thead>
                         <tbody>
@@ -41,14 +43,16 @@
                                 <td>{{ $data->ukuran }}</td>
                                 <td>{{ $data->stok }}</td>
                                 <td>{{ $data->tgl_keluar }}</td>
+                                @can('edit barang')
                                 <td>
-                                    <form action="" method="post">
+                                    <form action="/barang-keluar/{{ $data->id }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <a class="btn btn-sm btn-primary" href="{{ $data->id }}">Edit</a>
+                                        <a class="btn btn-sm btn-primary" href="/barang-keluar/{{ $data->id }}/edit">Edit</a>
                                         <button class="btn btn-sm btn-danger">Hapus</button>
                                     </form>
                                 </td>
+                                @endcan
                             </tr>
                             @empty
                             <tr class="text-center">

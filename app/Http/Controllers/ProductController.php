@@ -21,8 +21,6 @@ class ProductController extends Controller
     public function index()
     {
         //
-        // $data = Product::all()->groupBy('id')->sortBy('asc');
-        // dd($data->toArray());
         return view('admin.products.index', [
             'title'     => 'Data Barang',
             'produk'    => Product::all()
@@ -37,7 +35,10 @@ class ProductController extends Controller
     public function create()
     {
         $this->authorize('tambah barang');
-        return view('admin.products.create-product');
+        
+        return view('admin.products.create-product',[
+            'title' => 'Tambah Stok Barang'
+        ]);
     }
 
     /**
@@ -48,15 +49,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $validated = $request->validate([
-            'nama_produk'   => 'required|string|max:50',
-            'warna'         => 'required',
-            'ukuran'        => 'required',
-            'stok'          => 'required',
-        ]);
-
-        // $request->user()->chirps()->create($validated);
+        $this->authorize('tambah barang');
+        
         Product::create([
             'nama_produk'   => $request->input('nama_produk'),
             'warna'         => $request->input('warna'),
@@ -72,10 +66,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
-    {
-        //
-    }
+    // public function show(Product $product)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -84,8 +78,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Product $product)
-    {
-        //
+    {   
+        $this->authorize('tambah barang');
+        
         return view('admin.products.edit-product', ['produk' => $product]);
     }
 
@@ -98,7 +93,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $this->authorize('tambah barang');
+        
         $validated = $request->validate([
             'nama_produk'   => 'required|string|max:15',
             'warna'         => 'required',
@@ -117,7 +113,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $this->authorize('tambah barang');
+        
         Product::destroy($product->id);
         return redirect(route('products.index'));
     }
