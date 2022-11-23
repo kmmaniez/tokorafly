@@ -50,9 +50,9 @@ Route::middleware(['auth'])->group(function () {
         ->only(['index','create','store','edit','update','destroy']);
 
 
-    // Route khusus barang keluar
-    // prefix url = localhost/barang-keluar
-    /* cth akses dibawah : 
+/*  Route khusus barang keluar
+    prefix url = localhost/[barang-keluar] WAJIB HABIS / ada barang-keluar
+    cth akses dibawah : 
         localhost/barang-keluar/tambah-barang
         localhost/barang-keluar/{barang_keluar}/edit
     */
